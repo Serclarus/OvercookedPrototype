@@ -16,7 +16,7 @@ public class Player : MonoBehaviour
         bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * 2, .7f, moveDir, moveSpeed * Time.deltaTime);
         
         if(canMove) transform.position += moveDir * moveSpeed * Time.deltaTime;
-
+        //should check here
         if (!canMove)
         {
             Vector3 moveDirX = new Vector3(moveDir.x, 0, 0);
