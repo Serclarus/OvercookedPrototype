@@ -6,17 +6,20 @@ public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed;
     [SerializeField] GameInput gameInput;
+    [SerializeField] LayerMask countersLayerMask;
     private bool isWalking;
+    public Vector3 lastMoveDir;
     void Update()
     {
+        HandleInteractions();
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
 
         Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
 
         bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * 2, .7f, moveDir, moveSpeed * Time.deltaTime);
-        
-        if(canMove) transform.position += moveDir * moveSpeed * Time.deltaTime;
-        //should check here
+
+        if (canMove) transform.position += moveDir * moveSpeed * Time.deltaTime;
+
         if (!canMove)
         {
             Vector3 moveDirX = new Vector3(moveDir.x, 0, 0);
@@ -38,7 +41,7 @@ public class Player : MonoBehaviour
             }
         }
         if (canMove) { transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * 10); }
-        
+
 
         isWalking = moveDir != Vector3.zero;
         Debug.Log(inputVector);
@@ -48,4 +51,24 @@ public class Player : MonoBehaviour
     {
         return isWalking;
     }
+
+    private void HandleInteractions()
+    {
+        Vector2 inputVector = gameInput.GetMovementVectorNormalized();
+    
+        Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
+
+        if(moveDir != Vector3.zero) { lastMoveDir = moveDir; }
+
+        if (Physics.Raycast(transform.position, lastMoveDir, out RaycastHit raycastHit, 2, countersLayerMask))
+        {
+            if(raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
+            {
+                clearCounter.Interact();
+            }
+        }
+
+
+    }
+
 }
