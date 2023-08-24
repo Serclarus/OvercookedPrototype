@@ -5,6 +5,8 @@ using UnityEngine;
 public class GameInput : MonoBehaviour
 {
     NewControls inputScript;
+
+    //called before first frame
     void Awake()
     {
         inputScript = new NewControls();
