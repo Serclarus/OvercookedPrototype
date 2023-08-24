@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField] LayerMask countersLayerMask;
     private bool isWalking;
     public Vector3 lastMoveDir;
+
+    //called every frame
     void Update()
     {
         HandleInteractions();
