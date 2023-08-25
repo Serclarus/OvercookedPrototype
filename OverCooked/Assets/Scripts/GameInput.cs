@@ -11,6 +11,12 @@ public class GameInput : MonoBehaviour
     {
         inputScript = new NewControls();
         inputScript.Player.Enable();
+        inputScript.Player.Interact.performed += Interact_performed;
+    }
+
+    private void Interact_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        throw new System.NotImplementedException();
     }
 
     public Vector2 GetMovementVectorNormalized()
