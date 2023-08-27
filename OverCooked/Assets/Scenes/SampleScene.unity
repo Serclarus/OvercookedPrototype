@@ -334,7 +334,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &410087042
 MonoBehaviour:
@@ -403,7 +403,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1159795141 stripped
 GameObject:
@@ -411,6 +411,75 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1881049029}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1244211172
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5926766802852462166, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_Name
+      value: Kitchen Counter (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.6980748
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.003540516
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -2.8924818
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6416446041837102316, guid: ec6c25cc70d13d447a44bedf73d813c8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ec6c25cc70d13d447a44bedf73d813c8, type: 3}
 --- !u!1001 &1419417667
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -714,7 +783,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1964988431
 GameObject:
@@ -758,7 +827,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1969079023
 GameObject:
@@ -809,7 +878,7 @@ Transform:
   m_Children:
   - {fileID: 1978151587}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1978151587 stripped
 Transform:
