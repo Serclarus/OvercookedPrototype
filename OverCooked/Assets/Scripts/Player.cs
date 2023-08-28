@@ -32,7 +32,8 @@ public class Player : MonoBehaviour
             }
         }
     }
-
+    
+    //called every frame
     void Update()
     {
         HandleInteractions();
