@@ -6,6 +6,7 @@ public class ClearCounter : MonoBehaviour
 {
 public void Interact()
     {
+        //interaction logic
         Debug.Log("Interact!");
     }
 }
