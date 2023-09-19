@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance { get; private set; }
+
     public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
     public class OnSelectedCounterChangedEventArgs : EventArgs { public ClearCounter selectedCounter; }
 
@@ -16,6 +18,10 @@ public class Player : MonoBehaviour
 
     ClearCounter selectedCounter;
 
+    private void Awake()
+    {
+        Instance= this;
+    }
     private void Start()
     {
         gameInput.OnInteractAction += GameInput_OnInteractAction;
