@@ -1,15 +1,20 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public event EventHandler<OnSelectedCounterChangedEventArgs> OnSelectedCounterChanged;
+    public class OnSelectedCounterChangedEventArgs : EventArgs { public ClearCounter selectedCounter; }
+
     [SerializeField] float moveSpeed;
     [SerializeField] GameInput gameInput;
     [SerializeField] LayerMask countersLayerMask;
     private bool isWalking;
     public Vector3 lastMoveDir;
 
+    ClearCounter selectedCounter;
 
     private void Start()
     {
@@ -88,11 +93,22 @@ public class Player : MonoBehaviour
         {
             if(raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
             {
-               // clearCounter.Interact();
-            }
-        }
-
+               if (clearCounter != selectedCounter)
+                {
+                    SetSelectedCounter(selectedCounter);
+                }
+            } else { SetSelectedCounter(null); }
+        }else { SetSelectedCounter(null); }
 
     }
 
+    void SetSelectedCounter(ClearCounter selectedCounter)
+    {
+        this.selectedCounter = selectedCounter;
+
+        OnSelectedCounterChanged?.Invoke(this, new OnSelectedCounterChangedEventArgs
+        {
+            selectedCounter = selectedCounter
+        });
+    }
 }
