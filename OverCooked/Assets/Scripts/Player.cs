@@ -93,7 +93,7 @@ public class Player : MonoBehaviour
     
         Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
 
-        //if(moveDir != Vector3.zero) { lastMoveDir = moveDir; }
+        if(moveDir != Vector3.zero) { lastMoveDir = moveDir; }
 
         if (Physics.Raycast(transform.position, lastMoveDir, out RaycastHit raycastHit, 2, countersLayerMask))
         {
