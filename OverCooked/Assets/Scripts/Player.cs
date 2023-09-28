@@ -105,7 +105,72 @@ public class Player : MonoBehaviour
                 }
             } else { SetSelectedCounter(null); }
         }else { SetSelectedCounter(null); }
+        ///////////////////////////////////////////////
+        ////
+        ////
+        /////
+        ////
+        ////
+        ////
+        ////
+        ////
+        ////
+        ////
+        ////
         ///
+        /
+        /
+        /
+        //
+        //
+        //
+        /
+        //
+        /
+        /
+        /
+        //
+
+        /
+
+        /
+        /
+        /
+
+        /
+        /
+        /
+        //
+        /
+
+        /
+        /
+        /
+        /
+        /
+        /
+
+        //
+        ////
+        ////
+        ////
+        ///
+        //
+        /
+        /
+        /
+        /
+        /
+
+        //
+        ///
+        /
+        /
+        ////
+        ////
+        ///
+        /////
+
     }
 
     void SetSelectedCounter(ClearCounter selectedCounter)
