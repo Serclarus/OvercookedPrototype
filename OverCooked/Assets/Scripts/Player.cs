@@ -93,13 +93,15 @@ public class Player : MonoBehaviour
 
     private void HandleInteractions()
     {
+        float interactRange = 2f;
+
         Vector2 inputVector = gameInput.GetMovementVectorNormalized();
     
         Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
 
         if(moveDir != Vector3.zero) { lastMoveDir = moveDir; }
 
-        if (Physics.Raycast(transform.position, lastMoveDir, out RaycastHit raycastHit, 2, countersLayerMask))
+        if (Physics.Raycast(transform.position, lastMoveDir, out RaycastHit raycastHit, interactRange, countersLayerMask))
         {
             if(raycastHit.transform.TryGetComponent(out ClearCounter clearCounter))
             {
