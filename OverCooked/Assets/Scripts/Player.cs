@@ -51,14 +51,16 @@ public class Player : MonoBehaviour
 
         Vector3 moveDir = new Vector3(inputVector.x, 0, inputVector.y);
 
-        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * 2, .7f, moveDir, moveSpeed * Time.deltaTime);
+        float moveDistance = moveSpeed * Time.deltaTime;
 
-        if (canMove) transform.position += moveDir * moveSpeed * Time.deltaTime;
+        bool canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * 2, .7f, moveDir, moveDistance);
+
+        //if (canMove) transform.position += moveDir * moveSpeed * Time.deltaTime;
 
         if (!canMove)
         {
             Vector3 moveDirX = new Vector3(moveDir.x, 0, 0);
-            canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * 2, .7f, moveDirX, moveSpeed * Time.deltaTime);
+            canMove = !Physics.CapsuleCast(transform.position, transform.position + Vector3.up * 2, .7f, moveDirX, moveDistance);
 
             if (canMove)
             {
@@ -75,10 +77,12 @@ public class Player : MonoBehaviour
                 else { }
             }
         }
-        if (canMove) { transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * 10); }
+        if (canMove) { transform.position += moveDir * moveDistance; }
 
 
         isWalking = moveDir != Vector3.zero;
+        float rotateSpeed = 10f;
+        transform.forward = Vector3.Slerp(transform.forward, moveDir, Time.deltaTime * rotateSpeed);
         Debug.Log(inputVector);
     }
 
