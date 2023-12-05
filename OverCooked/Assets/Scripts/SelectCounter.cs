@@ -19,7 +19,6 @@ public class SelectCounter : MonoBehaviour
         }else  selectedVisual.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         
