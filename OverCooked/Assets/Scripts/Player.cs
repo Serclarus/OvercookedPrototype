@@ -98,7 +98,7 @@ public class Player : MonoBehaviour
             {
                if (clearCounter != selectedCounter)
                 {
-                    SetSelectedCounter(selectedCounter);
+                    SetSelectedCounter(clearCounter);
                 }
             } else { SetSelectedCounter(null); }
         }else { SetSelectedCounter(null); }
