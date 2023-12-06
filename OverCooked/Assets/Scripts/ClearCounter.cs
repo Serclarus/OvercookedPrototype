@@ -13,6 +13,9 @@ public void Interact()
         {
             Transform kitchenObjectTransform = Instantiate(KitchenObjectsSO.prefab, counterTopPoint);
             kitchenObjectTransform.localPosition = Vector3.zero;
+
+            kitchenObject = kitchenObjectTransform.GetComponent<KitchenObject>();
+            kitchenObject.SetClearCounter(this);
         }
         else Debug.Log("xd");
     }
