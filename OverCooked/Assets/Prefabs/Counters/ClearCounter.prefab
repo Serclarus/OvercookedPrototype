@@ -91,6 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68caf42796e66364ea3c99196c6b90ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tomatoPrefab: {fileID: 1215411242992794550, guid: 98b1eda4373ab764e8e5483f83cadcf3,
+    type: 3}
+  counterTopPoint: {fileID: 8488616152406410760}
 --- !u!1001 &3316418431554529669
 PrefabInstance:
   m_ObjectHideFlags: 0

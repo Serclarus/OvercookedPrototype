@@ -9,5 +9,6 @@ public class ClearCounter : MonoBehaviour
 public void Interact()
     {
         Transform tomatoTransform = Instantiate(tomatoPrefab, counterTopPoint);
+        tomatoTransform.localPosition = Vector3.zero;
     }
 }
