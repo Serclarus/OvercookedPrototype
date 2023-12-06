@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class ClearCounter : MonoBehaviour
 {
+    [SerializeField] Transform tomatoPrefab;
+    [SerializeField] Transform counterTopPoint;
 public void Interact()
     {
-        Debug.Log("Interact!");
+        Transform tomatoTransform = Instantiate(tomatoPrefab, counterTopPoint);
     }
 }
