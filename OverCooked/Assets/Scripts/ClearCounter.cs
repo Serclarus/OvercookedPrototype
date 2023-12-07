@@ -7,7 +7,7 @@ public class ClearCounter : MonoBehaviour
     [SerializeField] KitchenObjectsSO KitchenObjectsSO;
     [SerializeField] Transform counterTopPoint;
     private KitchenObject kitchenObject;
-public void Interact()
+public void Interact(Player player)
     {
         if (kitchenObject == null)
         {
