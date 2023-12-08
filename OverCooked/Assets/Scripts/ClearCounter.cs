@@ -7,7 +7,21 @@ public class ClearCounter : MonoBehaviour
     [SerializeField] KitchenObjectsSO KitchenObjectsSO;
     [SerializeField] Transform counterTopPoint;
     private KitchenObject kitchenObject;
-public void Interact(Player player)
+    [SerializeField] ClearCounter secondClearCounter;
+    bool testing;
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.T))
+        {
+            if(kitchenObject != null)
+            {
+                kitchenObject.SetClearCounter(secondClearCounter);
+                Debug.Log(kitchenObject.GetClearCounter());
+            }
+        }
+    }
+    public void Interact(Player player)
     {
         if (kitchenObject == null)
         {
@@ -18,5 +32,10 @@ public void Interact(Player player)
             kitchenObject.SetClearCounter(this);
         }
         else Debug.Log("xd");
+    }
+
+    public Transform GetKitchenObjectFollowTransform()
+    {
+        return counterTopPoint;
     }
 }
