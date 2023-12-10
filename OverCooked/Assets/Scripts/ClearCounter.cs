@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ClearCounter : MonoBehaviour
+public class ClearCounter : MonoBehaviour, IKitchenObject
 {
     [SerializeField] KitchenObjectsSO KitchenObjectsSO;
     [SerializeField] Transform counterTopPoint;
@@ -16,7 +16,7 @@ public class ClearCounter : MonoBehaviour
         {
             if(kitchenObject != null)
             {
-                kitchenObject.SetClearCounter(secondClearCounter);
+                kitchenObject.SetKitchenObjectParent(secondClearCounter);
                 //Debug.Log(kitchenObject.GetClearCounter());
             }
         }
@@ -26,13 +26,10 @@ public class ClearCounter : MonoBehaviour
         if (kitchenObject == null)
         {
             Transform kitchenObjectTransform = Instantiate(KitchenObjectsSO.prefab, counterTopPoint);
-            kitchenObjectTransform.GetComponent<KitchenObject>().SetClearCounter(this);
+            kitchenObjectTransform.GetComponent<KitchenObject>().SetKitchenObjectParent(this);
             kitchenObjectTransform.localPosition = Vector3.zero;
-
-            kitchenObject = kitchenObjectTransform.GetComponent<KitchenObject>();
-            kitchenObject.SetClearCounter(this);
         }
-        else Debug.Log(kitchenObject.GetClearCounter()) ;
+        else kitchenObject.SetKitchenObjectParent(player);
     }
 
     public Transform GetKitchenObjectFollowTransform()
